@@ -46,3 +46,8 @@ take-drop : ∀ {ℓ} {A : Set ℓ} (n : ℕ) -> (xs : List A) -> take n xs ++ d
 take-drop zero xs = refl
 take-drop (succ n) [] = refl
 take-drop (succ n) (x :: xs) rewrite take-drop n xs = refl
+
+length-map : ∀ {ℓ ℓ'} {A : Set ℓ} {B : Set ℓ'} (f : A -> B) (l : List A) ->
+             length (map f l) ≡ length l
+length-map f [] = refl
+length-map f (x :: xs) rewrite length-map f xs = refl
