@@ -1,0 +1,4 @@
+name:    tt101
+depend:  agda-prelude
+         standard-library
+include: src
